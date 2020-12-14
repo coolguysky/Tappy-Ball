@@ -1,23 +1,20 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class BallController : MonoBehaviour
 {
     private Rigidbody2D rb;
     public float upForce;
-    bool started;
-    bool gameOver;
+    private bool started;
+    private bool gameOver;
     public float rotation;
 
-    void Start()
+    private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         started = false;
         gameOver = false;
     }
-
-    void Update()
+    private void Update()
     {
         if (!started)
         {
@@ -37,9 +34,7 @@ public class BallController : MonoBehaviour
                 rb.AddForce(new Vector2(0, upForce));
             }
         }
-        
     }
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Pipe") && !gameOver)
@@ -53,7 +48,6 @@ public class BallController : MonoBehaviour
             ScoreManager.instance.IncremenetScore();
         }
     }
-
     private void OnCollisionEnter2D(Collision2D collision)
     {
         gameOver = true;

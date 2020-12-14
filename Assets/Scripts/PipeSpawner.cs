@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PipeSpawner : MonoBehaviour
 {
@@ -8,12 +6,6 @@ public class PipeSpawner : MonoBehaviour
     public float maxYpos;
     public float spawnTime;
 
-
-
-    private void Update()
-    {
-        
-    }
     private void SpawnPipe()
     {
         Instantiate(pipe, new Vector3 (

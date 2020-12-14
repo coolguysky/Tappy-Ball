@@ -4,7 +4,7 @@ public class PipeController : MonoBehaviour
 {
     public float speed;
     public float upDownSpeed;
-    Rigidbody2D rb;
+    private Rigidbody2D rb;
 
     private void Start()
     {
@@ -12,7 +12,6 @@ public class PipeController : MonoBehaviour
         MovePipe();
         InvokeRepeating(nameof(SwitchUpDown), 0.1f, 1f);
     }
-
     private void SwitchUpDown()
     {
         upDownSpeed = -upDownSpeed;
